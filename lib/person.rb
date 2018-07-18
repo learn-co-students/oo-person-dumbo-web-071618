@@ -1,13 +1,13 @@
-class Person
+class Person #couldn't submit this the way i usually do because i accidently grabbed the https link instead of the SSH
 attr_reader :name, :happiness, :hygiene
-#attr_writer :happiness, :hygiene
+#attr_writer :happiness, :hygiene - We don't set these two symbols as attr_writer's because we've created custom writers for them below. Basically if we put them here ruby won't know which version of attr_writer to use; the one up here or the custom one we made below.
 attr_accessor :bank_account
 
   def initialize(name)
-    @name = name
-    @hygiene = 8
-    @happiness = 8
-    @bank_account = 25
+    @name = name  #this name isn't modable so we lock it in attr_reader
+    @hygiene = 8  #this gets modified by "us"(the programmer) not the user so we set it as attr_reader when initializing
+    @happiness = 8 #this gets modified by "us"(the programmer) not the user so we set it as attr_reader when initializing
+    @bank_account = 25 #this gets modified by the user so we want it to be accessable hence the attr_accessor setting
   end
 
   def happiness=(value)
@@ -87,9 +87,6 @@ attr_accessor :bank_account
       return "blah blah blah blah blah"
     end
   end
-
-
-
 end
 
 
