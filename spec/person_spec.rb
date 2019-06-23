@@ -56,7 +56,7 @@ RSpec.describe "Person" do
         it "a person's happiness doesn't exceed 10" do
           people.each do |person|
             original_happiness = person.happiness
-            person.happiness += 100
+            person.happiness += 100 # person.happiness = person.happiness + 100
             expect(person.happiness).to eq(10)
           end
         end
